@@ -1,0 +1,12 @@
+<!-- page title -->
+<h1>Add a new dose to <%= @cocktail.name %></h1>
+
+<!-- Form to add a new dose (ingredient/description pair) to the cocktail -->
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient, collection: Ingredient.order(name: :asc), include_blank: false %>
+  <%= f.submit "Create new dose", class: "btn btn-primary" %>
+<% end %>
+
+<!-- links to naviguate to other pages -->
+<%= link_to "Go back to #{@cocktail.name}'s page", cocktail_path(@cocktail) %>
