@@ -1,27 +1,38 @@
-<h1>For goodness' shake</h1>
+<!-- navbar -->
 
-<h3>After a hard day of work, <strong>Your cocktail</strong> rendez-vous</h3>
-<p>Don't worry, the bill is on Bill...just mind the pill</p>
+
 
 <!-- banner -->
-
-<%= link_to 'Add a new cocktail', new_cocktail_path %>
-
-<!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../../assets/images/cocktail_banner1')">
+<!-- image url:  -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= asset_url('cocktail_banner1') %>')">
   <div class="container">
     <h1>For Goodness's shake</h1>
-    <p>For your own shake! The best cocktails when you need it the most</p>
-    <a class="btn btn-flat" href="#">Find a cocktail</a>
+    <p><strong>Your cocktail</strong> rendez-vous</p>
+    <p>Don't worry about the bill...just mind the pill</p>
+    <%= link_to new_cocktail_path, class: 'btn btn-light' do %>
+      Add a cocktail
+    <% end %>
   </div>
-</div> -->
+</div>
 
-<%= cl_image_tag("bhbncgxfhuqxy6sycigg", width: 400, height: 300, crop: :fill) %>
 
-<ul>
-<% @cocktails.each do |cocktail| %>
-  <li><%= link_to "#{cocktail.name} (cocktail.id = #{cocktail.id})", cocktail_path(cocktail) %></li>
-<% end %>
-</ul>
 
+<!-- CSS grid -->
+<div class="cards">
+
+  <% @cocktails.each do |cocktail| %>
+
+    <div class="card-cocktail">
+    <%= cl_image_tag("vnoevi9hwdqamzp3n4j4bvtnotxi", width: 400, height: 300, crop: :fill) %>
+      <div class="card-cocktail-infos">
+        <div>
+          <h2><%= link_to "#{cocktail.name} (cocktail.id = #{cocktail.id})", cocktail_path(cocktail) %></h2>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
 
 
