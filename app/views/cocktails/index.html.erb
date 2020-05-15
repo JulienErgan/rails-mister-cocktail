@@ -2,6 +2,8 @@
 
 <!-- banner -->
 
+<%= link_to 'Add a new cocktail', new_cocktail_path %>
+
 <!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../../assets/images/cocktail_banner1')">
   <div class="container">
     <h1>For Goodness's shake</h1>
@@ -10,10 +12,13 @@
   </div>
 </div> -->
 
-
+<%= cl_image_tag("bhbncgxfhuqxy6sycigg", width: 400, height: 300, crop: :fill) %>
 
 <ul>
 <% @cocktails.each do |cocktail| %>
   <li><%= link_to "#{cocktail.name} (cocktail.id = #{cocktail.id})", cocktail_path(cocktail) %></li>
 <% end %>
 </ul>
+
+
+
