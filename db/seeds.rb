@@ -43,20 +43,20 @@ puts "Finished creating #{Ingredient.count} ingredients name!"
 # upload photo from URL
 
 puts 'Creating the cocktails with attached image and 2 associated doses...'
-3.times do
-  cocktail = Cocktail.create!(
-    name: Faker::Name.first_name
-  )
-  file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-  cocktail.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  2.times do |count|
-    Dose.create!(
-      description: "#{rand(0..5)} cl",
-      cocktail: cocktail,
-      ingredient: Ingredient.all[count]
-    )
-  end
-end
+# 3.times do
+#   cocktail = Cocktail.create!(
+#     name: Faker::Name.first_name
+#   )
+#   file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+#   cocktail.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#   2.times do |count|
+#     Dose.create!(
+#       description: "#{rand(0..5)} cl",
+#       cocktail: cocktail,
+#       ingredient: Ingredient.all[count]
+#     )
+#   end
+# end
 
 puts "Finished creating #{Cocktail.count} cocktails!"
 puts "Finished creating #{Dose.count} doses!"
