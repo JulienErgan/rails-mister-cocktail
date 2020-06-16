@@ -6,7 +6,7 @@
     <%= link_to 'For Goodness shake', root_path, class: "navbar-goodness-shake" %>
     <!-- <img src="images/deliveroo.png" alt="" width="140px"> -->
     <!-- turn this link into a button -->
-    <a href="#" class="btn btn-primary">Login</a>
+    <a href="#" class="btn btn-primary">Add a new cocktail</a>
   </div>
 </div>
 <!-- END - navbar -->
@@ -50,7 +50,10 @@
     </div>
     <div class="col-6">
       <!-- add ingredient form here -->
-      <%= link_to 'Add a dose', new_cocktail_doses_path(@cocktail) %>
+      <%#= link_to 'Add an ingredient', new_cocktail_doses_path(@cocktail) %>
+      <h1>Add a new ingredient to <%= @cocktail.name %></h1>
+      <!-- Form to add a new dose (ingredient/description pair) to the cocktail -->
+
     </div>
   </div>
 </div>
