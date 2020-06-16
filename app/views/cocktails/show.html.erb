@@ -1,35 +1,68 @@
 
+<!-- START - navbar -->
 <div class="navbar border-bottom p-2 bg-white">
   <div class="container d-flex justify-content-between align-items-center">
 
-    <%= link_to 'For Goodness shake', root_path %>
+    <%= link_to 'For Goodness shake', root_path, class: "navbar-goodness-shake" %>
     <!-- <img src="images/deliveroo.png" alt="" width="140px"> -->
     <!-- turn this link into a button -->
     <a href="#" class="btn btn-primary">Login</a>
   </div>
 </div>
+<!-- END - navbar -->
 
-<div class="container">
-    <h1><%= @cocktail.name %></h1>
+<div class="container p-3">
+  <%= link_to 'Go back to list', cocktails_path, class: "btn btn-ghost" %>
 </div>
 
-<div class="container d-flex justify-content-between">
-  <div>
-    <!-- <p>(@cocktail.id = <%#= @cocktail.id %>)</p> -->
-    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<!-- cocktail container (including: photo, title and description) -->
+<div class="container p-3">
+  <div class="row">
+    <div class="col-5">
+      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div class="col-7">
+      <h1><%= @cocktail.name %></h1>
+      <!-- <p>(@cocktail.id = <%#= @cocktail.id %>)</p> -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, reiciendis impedit voluptates molestiae repudiandae magnam sunt amet deserunt autem mollitia dolores laudantium, ipsa vel quibusdam id ratione, repellat nemo esse.</p>
+    </div>
   </div>
-  <div>
-    <ul>
-    <% @doses.each do |dose| %>
-      <li> <%= dose.ingredient.name %> <%= dose.description %> (dose.id =<%= dose.id %>)</li>
-    <% end %>
-    </ul>
-  </div>
-
 </div>
-  <%= link_to 'Go back to list', cocktails_path %>
-  <%= link_to 'Add a dose', new_cocktail_doses_path(@cocktail) %>
+<!-- END - cocktail container  -->
 
-  <% @cocktail.doses.each do |dose| %>
-    <%= link_to "Delete dose (dose.id = #{dose.id})", dose_path(dose), method: :delete, data: { confirm: "Delete dose #{dose.id}?"} %>
-  <% end %>
+
+<!-- START - ingredients container (including: existing ingredients and add an ingredient form -->
+<div class="container p-3">
+  <div class="row">
+    <div class="col-6">
+      <h2>Ingredients</h2>
+      <ul class="ingredients-list">
+        <% @doses.each do |dose| %>
+          <li class="container d-flex justify-content-between">
+            <%= dose.ingredient.name %> <%= dose.description %> (dose.id =<%= dose.id %>)
+            <%= link_to dose_path(dose), class: "dose-delete-icon" , method: :delete, data: { confirm: "Delete dose #{dose.id}?"} do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+            <%#= link_to "Delete dose (dose.id = #{dose.id})", dose_path(dose), method: :delete, data: { confirm: "Delete dose #{dose.id}?"} %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-6">
+      <!-- add ingredient form here -->
+      <%= link_to 'Add a dose', new_cocktail_doses_path(@cocktail) %>
+    </div>
+  </div>
+</div>
+
+<!-- END - ingredients container  -->
+
+
+<!-- START - reviews container (including: existing reviews and add a review form -->
+
+
+<!-- END - reviews container  -->
+
+
+
+
