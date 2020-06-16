@@ -1,18 +1,35 @@
-<h1><%= @cocktail.name %></h1>
-<p>(@cocktail.id = <%= @cocktail.id %>)</p>
 
-<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="navbar border-bottom p-2 bg-white">
+  <div class="container d-flex justify-content-between align-items-center">
 
-<ul>
-<% @doses.each do |dose| %>
-  <li> <%= dose.ingredient.name %> <%= dose.description %> (dose.id =<%= dose.id %>)</li>
-<% end %>
-</ul>
+    <%= link_to 'For Goodness shake', root_path %>
+    <!-- <img src="images/deliveroo.png" alt="" width="140px"> -->
+    <!-- turn this link into a button -->
+    <a href="#" class="btn btn-primary">Login</a>
+  </div>
+</div>
 
-<%= link_to 'Go back to list', cocktails_path %>
-<%= link_to 'Add a dose', new_cocktail_doses_path(@cocktail) %>
+<div class="container">
+    <h1><%= @cocktail.name %></h1>
+</div>
 
-<% @cocktail.doses.each do |dose| %>
-  <%= link_to "Delete dose (dose.id = #{dose.id})", dose_path(dose), method: :delete, data: { confirm: "Delete dose #{dose.id}?"} %>
-<% end %>
+<div class="container d-flex justify-content-between">
+  <div>
+    <!-- <p>(@cocktail.id = <%#= @cocktail.id %>)</p> -->
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+  <div>
+    <ul>
+    <% @doses.each do |dose| %>
+      <li> <%= dose.ingredient.name %> <%= dose.description %> (dose.id =<%= dose.id %>)</li>
+    <% end %>
+    </ul>
+  </div>
 
+</div>
+  <%= link_to 'Go back to list', cocktails_path %>
+  <%= link_to 'Add a dose', new_cocktail_doses_path(@cocktail) %>
+
+  <% @cocktail.doses.each do |dose| %>
+    <%= link_to "Delete dose (dose.id = #{dose.id})", dose_path(dose), method: :delete, data: { confirm: "Delete dose #{dose.id}?"} %>
+  <% end %>
