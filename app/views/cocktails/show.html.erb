@@ -34,6 +34,7 @@
 <div class="ingredients-section">
   <div class="container p-3">
     <div class="row">
+      <!-- ingredients list -->
       <div class="col-6">
         <h2>Ingredients</h2>
         <ul class="ingredients-list">
@@ -49,9 +50,9 @@
         </ul>
       </div>
       <div class="col-6">
-        <!-- add ingredient form here -->
+        <!-- add an ingredient form-->
         <%#= link_to 'Add an ingredient', new_cocktail_doses_path(@cocktail) %>
-        <h1>Add a new ingredient to <%= @cocktail.name %></h1>
+        <h1 class="title-add-ingredient">Add a ingredient</h1>
         <!-- Form to add a new dose (ingredient/description pair) to the cocktail -->
       </div>
     </div>

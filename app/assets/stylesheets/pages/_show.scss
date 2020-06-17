@@ -18,7 +18,9 @@
 .cocktail-section .cocktail-show-photo {
   // box-shadow: 0 0 8px rgba(0,0,0,0.2);
   // border-radius: 8px;
-  box-shadow: 0 0 16px rgba(236, 236, 236, 0.8);
+  box-shadow: 0 0 16px rgba(236, 236, 236, 0.4  );
+  // box-shadow: 0 0 16px rgb(10, 62, 127);
+  // box-shadow: 0 0 16px rgba(2, 28, 60, 0.2);
   border-radius: 8px;
 }
 
@@ -34,7 +36,7 @@
 // END - cocktail description section
 
 
-// START - Ingredients section (including: existing ingredients and add an ingredient form
+// START - Ingredients section > ingredients list
 .ingredients-section {
   background-color: $midnight-blue-photo;
 }
@@ -81,8 +83,14 @@
   // opacity: 1;
   opacity: 1;
 }
-// END - Ingredients section
+// END - Ingredients section > ingredients list
 
+// START - Ingredients section > add an ingredient form
+.ingredients-section .title-add-ingredient {
+  color: rgba(236, 236, 236, 0.8);
+}
+
+// END - Ingredients section > add an ingredient form
 
 // START - reviews section
 // END - reviews section
