@@ -1,13 +1,13 @@
 <%= render 'shared/navbar' %>
 
 
-<!-- START - button back to list section  -->
-<div class="button-back-to-list-section">
+<!-- START -   -->
+<div class="title-create-cocktail-section">
   <div class="container p-3">
-    <%= link_to 'Go back to cocktail list', cocktails_path, class: "btn btn-coktail-navigation" %>
+    <h1>Create your new cocktail</h1>
   </div>
 </div>
-<!-- END - button back to list section -->
+<!-- END - -->
 
 <!-- new cocktail description section (including: photo, title and description) -->
 <div class="cocktail-section">
@@ -17,7 +17,7 @@
         <%= image_tag "wolf-wall-street-cheers-leonardo-dicaprio-480.jpg", alt: "Dicaprio cheers", height: 269, width: 480, crop: :fill, class: "cocktail-show-photo" %>
       </div>
       <div class="col-6">
-        <h1>Create a new cocktail</h1>
+        <h2>Create your cocktail</h2>
         <!-- <p>(@cocktail.id = <%#= @cocktail.id %>)</p> -->
         <%= simple_form_for @cocktail do |f| %>
           <%= f.input :name %>
@@ -30,12 +30,6 @@
   </div>
 </div>
 <!-- END - cocktail description section  -->
-
-
-
-<h1>Create a new Cocktail</h1>
-
-
 
 <%= link_to 'Back', cocktails_path %>
 
