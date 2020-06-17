@@ -20,7 +20,6 @@
 <div class="cards">
 
   <% @cocktails.each do |cocktail| %>
-
     <div class="card-cocktail">
     <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-cocktail-infos">

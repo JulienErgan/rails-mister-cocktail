@@ -2,6 +2,7 @@
 
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
+  <!--  input_html: { class: 'hidden' } -->
   <%= f.input :photo, as: :file %>
   <%= f.submit "Create new cocktail", class: "btn btn-primary" %>
 <% end %>
