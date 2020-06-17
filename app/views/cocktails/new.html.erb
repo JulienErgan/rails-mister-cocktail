@@ -1,11 +1,41 @@
+<%= render 'shared/navbar' %>
+
+
+<!-- START - button back to list section  -->
+<div class="button-back-to-list-section">
+  <div class="container p-3">
+    <%= link_to 'Go back to cocktail list', cocktails_path, class: "btn btn-coktail-navigation" %>
+  </div>
+</div>
+<!-- END - button back to list section -->
+
+<!-- new cocktail description section (including: photo, title and description) -->
+<div class="cocktail-section">
+  <div class="container p-3">
+    <div class="row">
+      <div class="col-6">
+        <%= image_tag "wolf-wall-street-cheers-leonardo-dicaprio-480.jpg", alt: "Dicaprio cheers", height: 269, width: 480, crop: :fill, class: "cocktail-show-photo" %>
+      </div>
+      <div class="col-6">
+        <h1>Create a new cocktail</h1>
+        <!-- <p>(@cocktail.id = <%#= @cocktail.id %>)</p> -->
+        <%= simple_form_for @cocktail do |f| %>
+          <%= f.input :name %>
+          <!--  input_html: { class: 'hidden' } -->
+          <%= f.input :photo, as: :file %>
+          <%= f.submit "Create new cocktail", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END - cocktail description section  -->
+
+
+
 <h1>Create a new Cocktail</h1>
 
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <!--  input_html: { class: 'hidden' } -->
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Create new cocktail", class: "btn btn-primary" %>
-<% end %>
+
 
 <%= link_to 'Back', cocktails_path %>
 

@@ -1,0 +1,11 @@
+<!-- START - navbar -->
+<div class="navbar-cocktail">
+  <div class="container d-flex justify-content-between align-items-center">
+    <%= link_to 'For Goodness Shake', root_path, class: "btn btn-navbar-goodness-shake" %>
+    <!-- <a href="#" class="btn btn-add-cocktail">Add a new cocktail</a> -->
+    <%= link_to new_cocktail_path, class: 'btn btn-add-cocktail' do %>
+      Add a new cocktail
+    <% end %>
+  </div>
+</div>
+<!-- END - navbar -->
