@@ -5,18 +5,16 @@
     <a href="#" class="btn btn-add-cocktail">Add a new cocktail</a>
   </div>
 </div>
-<!-- END - navbar -->
-
-<!-- START - Back to list  -->
-<div class="back-to-list">
+<!-- END - button back to list section  -->
+<div class="button-back-to-list-section">
   <div class="container p-3">
     <%= link_to 'Go back to cocktail list', cocktails_path, class: "btn btn-coktail-navigation" %>
   </div>
 </div>
-<!-- END -  -->
+<!-- END - button back to list section -->
 
-<!-- cocktail container (including: photo, title and description) -->
-<div class="cocktail-description">
+<!-- cocktail description section (including: photo, title and description) -->
+<div class="cocktail-section">
   <div class="container p-3">
     <div class="row">
       <div class="col-5">
@@ -30,43 +28,41 @@
     </div>
   </div>
 </div>
-<!-- END - cocktail container  -->
+<!-- END - cocktail description section  -->
 
-
-<!-- START - ingredients container (including: existing ingredients and add an ingredient form -->
-<div class="container p-3">
-  <div class="row">
-    <div class="col-6">
-      <h2>Ingredients</h2>
-      <ul class="ingredients-list">
-        <% @doses.each do |dose| %>
-          <li class="container d-flex justify-content-between">
-            <%= dose.ingredient.name %> <%= dose.description %> (dose.id =<%= dose.id %>)
-            <%= link_to dose_path(dose), class: "dose-delete-icon" , method: :delete, data: { confirm: "Delete dose #{dose.id}?"} do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-            <%#= link_to "Delete dose (dose.id = #{dose.id})", dose_path(dose), method: :delete, data: { confirm: "Delete dose #{dose.id}?"} %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="col-6">
-      <!-- add ingredient form here -->
-      <%#= link_to 'Add an ingredient', new_cocktail_doses_path(@cocktail) %>
-      <h1>Add a new ingredient to <%= @cocktail.name %></h1>
-      <!-- Form to add a new dose (ingredient/description pair) to the cocktail -->
-
+<!-- START - Ingredients section (including: existing ingredients and add an ingredient form -->
+<div class="ingredients-section">
+  <div class="container p-3">
+    <div class="row">
+      <div class="col-6">
+        <h2>Ingredients</h2>
+        <ul class="ingredients-list">
+          <% @doses.each do |dose| %>
+            <li class="container d-flex justify-content-between">
+              <%= dose.ingredient.name %> <%= dose.description %> (dose.id =<%= dose.id %>)
+              <%= link_to dose_path(dose), class: "dose-delete-icon" , method: :delete, data: { confirm: "Delete dose #{dose.id}?"} do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+              <%#= link_to "Delete dose (dose.id = #{dose.id})", dose_path(dose), method: :delete, data: { confirm: "Delete dose #{dose.id}?"} %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-6">
+        <!-- add ingredient form here -->
+        <%#= link_to 'Add an ingredient', new_cocktail_doses_path(@cocktail) %>
+        <h1>Add a new ingredient to <%= @cocktail.name %></h1>
+        <!-- Form to add a new dose (ingredient/description pair) to the cocktail -->
+      </div>
     </div>
   </div>
 </div>
-
-<!-- END - ingredients container  -->
-
-
-<!-- START - reviews container (including: existing reviews and add a review form -->
+<!-- END - Ingredients section -->
 
 
-<!-- END - reviews container  -->
+<!-- START - reviews section (including: existing reviews and add a review form -->
+ <!-- TODO -->
+<!-- END - reviews section  -->
 
 
 
