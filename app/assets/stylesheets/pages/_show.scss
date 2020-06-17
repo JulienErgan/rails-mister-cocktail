@@ -1,5 +1,29 @@
 
 
+
+
+.back-to-list {
+  background-color: $midnight-blue-photo;
+}
+
+.cocktail-description {
+  background-color: rgb(236, 236, 236);
+}
+
+.cocktail-description .cocktail-show-photo {
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+.cocktail-description h1 {
+  color: $midnight-blue-photo;
+}
+
+.cocktail-description p {
+  color: $midnight-blue-photo;
+}
+
+
 .ingredients-list {
   padding-left: 0px;
 }

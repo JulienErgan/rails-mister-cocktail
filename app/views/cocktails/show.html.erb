@@ -1,4 +1,3 @@
-
 <!-- START - navbar -->
 <div class="navbar-cocktail">
   <div class="container d-flex justify-content-between align-items-center">
@@ -8,20 +7,26 @@
 </div>
 <!-- END - navbar -->
 
-<div class="container p-3">
-  <%= link_to 'Go back to list', cocktails_path, class: "btn btn-ghost" %>
+<!-- START - Back to list  -->
+<div class="back-to-list">
+  <div class="container p-3">
+    <%= link_to 'Go back to cocktail list', cocktails_path, class: "btn btn-coktail-navigation" %>
+  </div>
 </div>
+<!-- END -  -->
 
 <!-- cocktail container (including: photo, title and description) -->
-<div class="container p-3">
-  <div class="row">
-    <div class="col-5">
-      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-    </div>
-    <div class="col-7">
-      <h1><%= @cocktail.name %></h1>
-      <!-- <p>(@cocktail.id = <%#= @cocktail.id %>)</p> -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, reiciendis impedit voluptates molestiae repudiandae magnam sunt amet deserunt autem mollitia dolores laudantium, ipsa vel quibusdam id ratione, repellat nemo esse.</p>
+<div class="cocktail-description">
+  <div class="container p-3">
+    <div class="row">
+      <div class="col-5">
+        <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill, class: "cocktail-show-photo" %>
+      </div>
+      <div class="col-7">
+        <h1><%= @cocktail.name %></h1>
+        <!-- <p>(@cocktail.id = <%#= @cocktail.id %>)</p> -->
+        <p>Use seasonal rhubarb to make this for a G&T with a difference, or top the finished gin with soda water for a refreshing summertime drink in glorious pink.</p>
+      </div>
     </div>
   </div>
 </div>
