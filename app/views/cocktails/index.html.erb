@@ -8,7 +8,7 @@
   <div class="container">
   <h1>For Goodness shake</h1>
     <p>Your cocktail rendez-vous</p>
-    <%= link_to new_cocktail_path, class: 'btn btn-ghost ' do %>
+    <%= link_to new_cocktail_path, class: 'btn btn-add-cocktail' do %>
       Add a cocktail
     <% end %>
   </div>
@@ -18,19 +18,12 @@
 
 <!-- CSS grid -->
 <div class="cards">
-
   <% @cocktails.each do |cocktail| %>
-    <div class="card-cocktail">
-    <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-      <div class="card-cocktail-infos">
-        <div>
-          <h2><%= link_to "#{cocktail.name} (cocktail.id = #{cocktail.id})", cocktail_path(cocktail) %></h2>
-        </div>
-      </div>
+    <div class="card-cocktail d-flex flex-column align-items-center">
+      <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail), class: "cocktail-name" %></h2>
     </div>
-
   <% end %>
-
 </div>
 
 

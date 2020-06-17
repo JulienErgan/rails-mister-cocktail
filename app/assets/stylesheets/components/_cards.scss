@@ -16,6 +16,7 @@
   // background-position: center;
   // height: 180px;
   // display: flex;
+  // direction: column;
   // justify-content: center;
   // align-items: center;
   // color: white;
@@ -33,13 +34,22 @@
   border-radius: 8px;
 }
 
-.card-cocktail h2 {
+
+.card-cocktail .cocktail-name {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  color: $midnight-blue-photo-red;
+  // color: $midnight-blue-photo-red;
   text-decoration: none;
+  color: rgb(250,250,250);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
+
+ .card-cocktail .cocktail-name:hover {
+  opacity: 1;
+}
+
 
 .card-cocktail p {
   font-size: 12px;
