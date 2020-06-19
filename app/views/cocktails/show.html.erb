@@ -1,17 +1,9 @@
 <!-- render partial navbar -->
 <%= render 'shared/navbar' %>
 
-<!-- START - button back to list section  -->
-<div class="button-back-to-list-section">
-  <div class="container p-3">
-    <%= link_to 'Go back to cocktail list', cocktails_path, class: "btn btn-coktail-navigation" %>
-  </div>
-</div>
-<!-- END - button back to list section -->
-
 <!-- cocktail description section (including: photo, title and description) -->
 <div class="cocktail-section">
-  <div class="container p-3">
+  <div class="container pt-5 pb-3">
     <div class="row">
       <div class="col-5">
         <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill, class: "cocktail-show-photo" %>
@@ -28,7 +20,7 @@
 
 <!-- START - Ingredients section (including: existing ingredients and add an ingredient form -->
 <div class="ingredients-section">
-  <div class="container p-3">
+  <div class="container p-5">
     <div class="row">
       <!-- ingredients list -->
       <div class="col-6">
@@ -66,6 +58,13 @@
  <!-- TODO -->
 <!-- END - reviews section  -->
 
+<!-- START - button back to list section  -->
+<div class="button-back-to-list-section">
+  <div class="container pb-5 pt-3">
+    <%= link_to 'Go back to cocktail list', cocktails_path, class: "btn btn-coktail-navigation" %>
+  </div>
+</div>
+<!-- END - button back to list section -->
 
 
 

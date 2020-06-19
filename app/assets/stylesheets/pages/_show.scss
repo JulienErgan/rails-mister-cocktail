@@ -1,4 +1,7 @@
 
+body {
+  background-color: $midnight-blue-photo;
+}
 
 // START - button back to list section
 .button-back-to-list-section {
@@ -39,6 +42,12 @@
 // START - Ingredients section > ingredients list
 .ingredients-section {
   background-color: $midnight-blue-photo;
+  margin-bottom: 64px;
+  margin-top: 32px;
+}
+
+.ingredients-section .container {
+  border-top: 2px solid rgba(240,240,240,0.3);
 }
 
 .ingredients-section h2 {
