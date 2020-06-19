@@ -173,12 +173,6 @@ Dose.create!(
 )
 
 Dose.create!(
-  description: "some",
-  cocktail: @easy_sangria,
-  ingredient: Ingredient.new(name: "ice")
-)
-
-Dose.create!(
   description: "750ml",
   cocktail: @easy_sangria,
   ingredient: Ingredient.new(name: "bottle light red wine")
@@ -213,12 +207,6 @@ Dose.create!(
   description: "100g",
   cocktail: @espresso_martini,
   ingredient: Ingredient.new(name: "golden caster sugar")
-)
-
-Dose.create!(
-  description: "some",
-  cocktail: @espresso_martini,
-  ingredient: Ingredient.new(name: "ice")
 )
 
 Dose.create!(
@@ -289,12 +277,6 @@ Dose.create!(
 )
 
 Dose.create!(
-  description: "some",
-  cocktail: @new_york_sour,
-  ingredient: Ingredient.new(name: "ice")
-)
-
-Dose.create!(
   description: "20ml",
   cocktail: @new_york_sour,
   ingredient: Ingredient.new(name: "red wine")
@@ -316,7 +298,7 @@ file = URI.open("https://www.bbcgoodfood.com/sites/default/files/styles/recipe/p
 Dose.create!(
   description: "50ml",
   cocktail: @sex_on_the_beach_cocktail,
-  ingredient: Ingredient.new(name: "vodka")
+  ingredient: Ingredient.find_by(name: "vodka")
 )
 
 Dose.create!(
@@ -392,12 +374,6 @@ Dose.create!(
   ingredient: Ingredient.new(name: "to garnish")
 )
 
-Dose.create!(
-  description: "some",
-  cocktail: @pink_gin_iced_tea_cocktail,
-  ingredient: Ingredient.new(name: "ice")
-)
-
 puts 'Finished creating the Pink gin iced tea cocktail...'
 
 # Hurricane cocktail
@@ -414,13 +390,13 @@ file = URI.open("https://www.bbcgoodfood.com/sites/default/files/styles/recipe/p
 Dose.create!(
   description: "50ml",
   cocktail: @hurricane,
-  ingredient: Ingredient.new(name: " dark rum")
+  ingredient: Ingredient.new(name: "dark rum")
 )
 
 Dose.create!(
   description: "50ml",
   cocktail: @hurricane,
-  ingredient: Ingredient.new(name: "white rum")
+  ingredient: Ingredient.find_by(name: "white rum")
 )
 
 Dose.create!(
@@ -462,46 +438,69 @@ puts 'Finished creating the Hurricane cocktail...'
 puts 'Creating the Pink negroni cocktail...'
 
 @pink_negroni = Cocktail.create!(
-  name: 'Hurricane',
+  name: 'Pink negroni',
   description: "Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve"
 )
 file = URI.open("https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P")
-@hurricane.photo.attach(io: file, filename: 'hurricane-cocktail.jpg', content_type: 'image/jpg')
+@pink_negroni.photo.attach(io: file, filename: 'pink-negroni-cocktail.jpg', content_type: 'image/jpg')
 
 Dose.create!(
   description: "35ml ",
-  cocktail: @hurricane,
+  cocktail: @pink_negroni,
   ingredient: Ingredient.new(name: "pink gin")
 )
 
 Dose.create!(
   description: "25ml",
-  cocktail: @hurricane,
+  cocktail: @pink_negroni,
   ingredient: Ingredient.new(name: "rose vermouth, or sweet white vermouth")
 )
 
 Dose.create!(
   description: "15ml",
-  cocktail: @hurricane,
+  cocktail: @pink_negroni,
   ingredient: Ingredient.new(name: "Aperol")
 )
 
 Dose.create!(
-  description: "some",
-  cocktail: @hurricane,
-  ingredient: Ingredient.new(name: "ice")
-)
-
-Dose.create!(
   description: "wedge of",
-  cocktail: @hurricane,
+  cocktail: @pink_negroni,
   ingredient: Ingredient.new(name: "pink grapefruit Grapefruit and a basil leaf, to garnish")
 )
 
 puts 'Finished creating the Pink negroni cocktail...'
 
 
+# Pink negroni
 
+puts 'Creating the Vodka martini cocktail...'
+
+@vodka_martini = Cocktail.create!(
+  name: 'Vodka martini',
+  description: "Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve"
+)
+file = URI.open("https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P")
+@vodka_martini.photo.attach(io: file, filename: 'pink-negroni-cocktail.jpg', content_type: 'image/jpg')
+
+Dose.create!(
+  description: "60ml",
+  cocktail: @vodka_martini,
+  ingredient: Ingredient.find_by(name: "vodka")
+)
+
+Dose.create!(
+  description: "1 tbsp",
+  cocktail: @vodka_martini,
+  ingredient: Ingredient.new(name: "dry vermouth")
+)
+
+Dose.create!(
+  description: "olive or lemon peel",
+  cocktail: @vodka_martini,
+  ingredient: Ingredient.find_by(name: "to garnish")
+)
+
+puts 'Finished creating the Vodka martini cocktail...'
 
 puts "Finished creating #{Cocktail.count} cocktails!"
 puts "Finished creating #{Dose.count} doses!"
