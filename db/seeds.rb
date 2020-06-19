@@ -471,7 +471,7 @@ Dose.create!(
 puts 'Finished creating the Pink negroni cocktail...'
 
 
-# Pink negroni
+# Vodka martini
 
 puts 'Creating the Vodka martini cocktail...'
 
@@ -479,7 +479,7 @@ puts 'Creating the Vodka martini cocktail...'
   name: 'Vodka martini',
   description: "Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve"
 )
-file = URI.open("https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P")
+file = URI.open("https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2020/02/vodka-martini-recipe.jpg?itok=yVdGsiPI")
 @vodka_martini.photo.attach(io: file, filename: 'pink-negroni-cocktail.jpg', content_type: 'image/jpg')
 
 Dose.create!(
