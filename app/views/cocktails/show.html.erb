@@ -36,7 +36,7 @@
         <ul class="ingredients-list">
           <% @cocktail.doses.each do |dose| %>
             <li class="container d-flex justify-content-between">
-              <%= dose.ingredient.name %> <%= dose.description %> (dose.id =<%= dose.id %>)
+              <%= "#{dose.description} #{dose.ingredient.name}" %> <!-- (dose.id =<%#= dose.id %>) -->
               <%= link_to dose_path(dose), class: "dose-delete-icon" , method: :delete, data: { confirm: "Delete dose #{dose.id}?"} do %>
                 <i class="fas fa-trash-alt"></i>
               <% end %>
