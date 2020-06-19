@@ -4,7 +4,7 @@
 <!-- START -   -->
 <div class="title-create-cocktail-section">
   <div class="container p-3">
-    <h1>Create your new cocktail</h1>
+    <h1 class>Create your new cocktail</h1>
   </div>
 </div>
 <!-- END - -->
@@ -20,10 +20,9 @@
         <h2>Create your cocktail</h2>
         <!-- <p>(@cocktail.id = <%#= @cocktail.id %>)</p> -->
         <%= simple_form_for @cocktail do |f| %>
-          <%= f.input :name %>
-          <!--  input_html: { class: 'hidden' } -->
-          <%= f.input :photo, as: :file %>
-          <%= f.submit "Create new cocktail", class: "btn btn-primary" %>
+          <%= f.input :name, label: "Name", placeholder: "ex: Vodka martini", label_html: { class: 'ingredient-form-label' } %>
+          <%= f.input :photo, as: :file, label: "Name", label_html: { class: 'ingredient-form-label' } %>
+          <%= f.submit "Create new cocktail", class: "btn btn-add-cocktail" %>
         <% end %>
       </div>
     </div>
