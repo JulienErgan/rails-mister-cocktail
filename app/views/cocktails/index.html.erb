@@ -20,7 +20,7 @@
 <div class="cards">
   <% @cocktails.each do |cocktail| %>
     <div class="card-cocktail d-flex flex-column align-items-center">
-      <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag cocktail.photo.key, height: 463, width: 500, crop: :fill %>
       <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail), class: "cocktail-name" %></h2>
     </div>
   <% end %>
