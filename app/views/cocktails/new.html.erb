@@ -21,7 +21,8 @@
         <!-- <p>(@cocktail.id = <%#= @cocktail.id %>)</p> -->
         <%= simple_form_for @cocktail do |f| %>
           <%= f.input :name, label: "Name", placeholder: "ex: Vodka martini", label_html: { class: 'ingredient-form-label' } %>
-          <%= f.input :photo, as: :file, label: "Name", label_html: { class: 'ingredient-form-label' } %>
+          <%= f.input :description, label: "Add a description", placeholder: "ex: Make an easy vodka martini with our simple recipe...", label_html: { class: 'ingredient-form-label' } %>
+          <%= f.input :photo, as: :file, label: "Add a photo", label_html: { class: 'ingredient-form-label' } %>
           <%= f.submit "Create new cocktail", class: "btn btn-add-cocktail" %>
         <% end %>
       </div>
